@@ -1,0 +1,144 @@
+@import "../../../css/colors.less";
+
+@pad: 8px;
+
+.uiParty {
+
+	.party {
+		position: absolute;
+		left: 16px;
+		top: 154px;
+
+		.member {
+			width: 160px;
+			margin-bottom: @pad;
+			background-color: #3a3b4a;
+			color: @white;
+			padding: 8px;
+			cursor: pointer;
+
+			&.differentZone {
+				opacity: 0.4;
+
+				.statBox {
+					[class^="stat"] {
+						width: 0% !important;
+					}
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
+
+			.statBox {
+				width: 100%;
+				height: 18px;
+				background-color: @gray;
+				position: relative;
+				margin-bottom: 5px;
+
+				&:last-child {
+					margin-bottom: 0px;
+				}
+
+				[class^="stat"] {
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					height: 100%;
+				}
+
+				.text {
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					width: 100%;
+					height: 100%;
+					text-align: center;
+					color: @white;
+					padding: 2px 8px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+
+					text-shadow: 
+						2px 0px #2d2136,
+						-2px 0px #2d2136,
+						0px -2px #2d2136,
+						0px 2px #2d2136,
+						-2px -2px #2d2136,
+						-2px 2px #2d2136,
+						2px -2px #2d2136,
+						2px 2px #2d2136;
+				}
+
+				&:nth-child(1) {
+					background-color: #802343;
+				}
+
+				&:nth-child(2) {
+					background-color: #42548d;
+				}
+
+				.statHp {
+					background-color: #d43346;
+				}
+
+				.statMana {
+					background-color: #3fa7dd;
+				}
+			}
+		}
+	}
+
+	.invite {
+		position: absolute;
+
+		right: 436px;
+		bottom: 10px;
+		height: 144px;
+
+		background-color: fade(@darkGray, 90%);
+		padding: 8px;
+
+		color: @white;
+
+		.text {
+			margin-bottom: 16px;
+			text-align: center;
+
+			> * {
+				display: block;
+				width: 100%;
+			}
+
+			.name {
+				margin-top: 10px;
+				margin-bottom: -4px;
+			}
+		}
+
+		.buttons {
+			[class^='btn'] {
+				width: 100%;
+				background-color: @blackA;
+				text-align: center;
+				padding: 8px;
+				cursor: pointer;
+				color: @white;
+
+				&.btnDecline {
+				}
+
+				&.btnAccept {
+					margin-bottom: 10px;
+				}
+
+				&:hover {
+					background-color: @grayD;
+					color: @black;
+				}
+			}
+		}
+	}
+}

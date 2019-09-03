@@ -1,0 +1,115 @@
+@import "../../../css/colors.less";
+
+.uiWorkbench {
+	display: none;
+	width: 720px;
+	height: 385px;
+	border: 5px solid fade(@blackB, 90%);
+	text-align: center;
+	color: @white;
+
+	> .heading {
+		color: @blueA;
+		width: 100%;
+		height: 36px;
+		background-color: fade(@blackB, 90%);
+
+		.heading-text {
+			padding-top: 8px;
+			margin: auto;
+		}
+	}
+
+	.bottom {
+		background-color: fade(@blackC, 90%);
+		height: calc(100% - 36px);
+		width: 100%;
+
+		.heading {
+			color: @blueB;
+			margin-bottom: 10px;
+		}
+		
+		.left, .right {
+			float: left;
+			height: 100%;
+			padding: 10px;
+		}
+
+		.left {
+			width: 300px;
+
+			.list {
+				height: calc(100% - 25px);
+				overflow-y: auto;
+
+				.item {
+					width: 100%;
+					padding: 5px 0px;
+					cursor: pointer;
+
+					&.selected {
+						background-color: @blackB;
+					}
+
+					&:hover {
+						background-color: @blackB;
+					}
+				}
+			}
+		}
+
+		.right {
+			width: calc(100% - 300px);
+
+			> * {
+				width: 100%;
+			}
+
+			.info {
+				height: calc(100% - 100px - 35px);
+
+				.title {
+					color: @orange;
+					padding-bottom: 10px;
+				}
+			}
+
+			.materialList {
+				height: 100px;
+				visibility: hidden;
+
+				.material {
+
+
+					&.need {
+						color: @redB;
+					}
+				}
+			}
+
+			.buttons {
+				height: 40px;
+
+				> .btn {
+					height: 35px;
+				    width: 100px;
+				    color: @white;
+				    text-align: center;
+				    padding-top: 10px;
+				    background-color: @blackB;
+				    cursor: pointer;
+				    float: left;
+
+				    &:last-child {
+						float: right;
+				    }
+
+				    &:hover {
+				    	background-color: @blackA;
+				    }
+				}
+			}
+		}
+	}
+}

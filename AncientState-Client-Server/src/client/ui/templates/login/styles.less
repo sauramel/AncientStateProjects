@@ -1,0 +1,181 @@
+@import "../../../css/colors.less";
+
+@leftWidth: 400px;
+@rightWidth: 400px;
+@boxPadding: 16px;
+
+@logoWidth: 559px;
+@logoHeight: 200px;
+
+@boxHeight: 169px;
+
+@messageHeight: @boxPadding;
+
+@totalWidth: @rightWidth;
+@totalHeight: (@logoHeight + @boxHeight + (@boxPadding * 3) + @messageHeight);
+
+.uiLogin {
+	display: none;
+	width: @totalWidth;
+	height: @totalHeight;
+	margin-top: -80px;
+
+	.logo {
+		width: 562px;
+		height: @logoHeight;
+		margin-left: ((@totalWidth / 2) - (@logoWidth / 2));
+		margin-bottom: (@boxPadding * 3);
+	}
+
+	.right {
+		height: @boxHeight;
+		background-color: #3a3b4a;
+
+		width: @rightWidth;
+		padding: @boxPadding;
+
+		.label, input {
+			float: left;
+		}
+
+		.label {
+			width: 30%;
+			padding-top: 10px;
+			color: @green;
+		}
+
+		input {
+			width: 70%;
+		}
+
+		input, .textbox, input:-webkit-autofill {
+		    box-shadow: 0 0 0px 1000px darken(@gray, 15%) inset;
+			color: @white;
+			-webkit-text-fill-color: @white;
+			margin-bottom: @boxPadding;
+		}
+
+		/* We duplicate this for firefox which doesn't like the webkit selector */
+		input, .textbox {
+		    box-shadow: 0 0 0px 1000px darken(@gray, 15%) inset;
+			color: @white;
+			-webkit-text-fill-color: @white;
+			margin-bottom: @boxPadding;
+		}
+
+		.message {
+			height: @messageHeight;
+			width: 200%;
+			margin-left: -50%;
+			margin-top: 36px;
+			float: left;
+			text-align: center;
+			color: @orange;
+
+			filter: 
+				brightness(100%)
+				drop-shadow(0px -4px 0px @blackD) 
+				drop-shadow(0px 4px 0px @blackD)
+				drop-shadow(4px 0px 0px @blackD) 
+				drop-shadow(-4px 0px 0px @blackD);
+
+			-moz-filter: 
+				brightness(100%)
+				drop-shadow(0px -4px 0px @blackD) 
+				drop-shadow(0px 4px 0px @blackD)
+				drop-shadow(4px 0px 0px @blackD) 
+				drop-shadow(-4px 0px 0px @blackD);
+		}
+
+		.top-buttons {
+			width: 100%;
+			height: 35px;
+
+			.btn {
+				background-color: @blueC;
+				width: calc((100% - @boxPadding) / 2);
+				float: left;
+				margin-right: @boxPadding;
+				color: @white;
+
+				&:last-child {
+					margin-right: 0px;
+				}
+
+				&:hover {
+					background-color: @blueB;
+				}
+			}
+		}
+	}
+
+	.news {
+		margin-left: -100px;
+		margin-top: 40px;
+		color: @white;
+		width: 600px;
+		text-align: center;
+		cursor: pointer;
+
+		filter: 
+			drop-shadow(0px -4px 0px @blackD) 
+			drop-shadow(0px 4px 0px @blackD)
+			drop-shadow(4px 0px 0px @blackD) 
+			drop-shadow(-4px 0px 0px @blackD);
+	}
+
+	.spacer-h {
+		height: 61px;
+	}
+}
+
+.uiLoginExtra {
+	.extra {
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+
+		.btn {
+			padding-left: 10px;
+			padding-right: 10px;
+			width: 100%;
+			margin-bottom: 10px;
+			background-color: @blueD;
+			color: @white;
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
+
+			&:hover {
+				background-color: @blueC;
+			}
+		}
+	}
+
+	.version {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		color: @yellow;
+		cursor: pointer;
+
+		filter: 
+			brightness(100%)
+			drop-shadow(0px -4px 0px @blackD) 
+			drop-shadow(0px 4px 0px @blackD)
+			drop-shadow(4px 0px 0px @blackD) 
+			drop-shadow(-4px 0px 0px @blackD);
+
+		-moz-filter: 
+			brightness(100%)
+			drop-shadow(0px -4px 0px @blackD) 
+			drop-shadow(0px 4px 0px @blackD)
+			drop-shadow(4px 0px 0px @blackD) 
+			drop-shadow(-4px 0px 0px @blackD);
+	}
+}
+
+.mobile .uiLogin {
+	margin-top: 0px;
+}

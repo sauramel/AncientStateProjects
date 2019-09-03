@@ -1,0 +1,139 @@
+@import "../../../css/colors.less";
+
+.uiTooltipItem {
+	> * {
+		z-index: 999999;
+	}
+
+	.tooltip {
+		display: none;
+		position: absolute;
+		margin-left: -4px;
+		margin-top: -4px;
+		background-color: fade(@blackB, 95%);
+		pointer-events: none;
+		padding: 10px;
+		color: @white;
+		text-align: center;
+		line-height: 18px;
+		max-width: 300px;
+
+		.name {
+			margin-bottom: 8px;
+
+			.type {
+				color: darken(@white, 40%);
+			}
+
+			.power {
+				color: @green;
+				display: none;
+			}
+		}
+
+		> .implicitStats {
+			color: darken(@white, 20%);
+			margin-bottom: 8px;
+			padding-bottom: 8px;
+			border-bottom: 2px solid @blackA;
+
+			.gainStat {
+				color: @green;
+			}
+
+			.loseStat {
+				color: @red;
+			}
+		}
+
+		> .stats {
+			color: darken(@white, 20%);
+			margin-bottom: 8px;
+			padding-bottom: 8px;
+			border-bottom: 2px solid @blackA;
+
+			.gainStat {
+				color: @green;
+			}
+
+			.loseStat {
+				color: @red;
+			}
+
+			.enchanted {
+				color: @tealC !important;
+			}
+		}
+
+		.effects {
+			color: @white;
+			margin-bottom: 8px;
+		}
+
+		.faction {
+			color: darken(@white, 40%);
+			margin-bottom: 8px;
+		}
+
+		.requires {
+			margin-top: 8px;
+			color: darken(@white, 40%);
+
+			&.high-level {
+				color: @red;
+			}
+
+			.high-level {
+				color: @red;
+			}
+
+			> *:not(.high-level) {
+				color: darken(@white, 40%);
+			}
+		}
+
+		.material {
+			color: darken(@white, 40%);
+			display: none;
+		}
+
+		.quest {
+			color: darken(@white, 40%);
+			display: none;
+		}		
+
+		.info {
+			color: darken(@white, 60%);
+		}
+
+		.damage {
+			.gainDamage {
+				color: @green;
+			}
+
+			.loseDamage {
+				color: @red;
+			}
+		}
+
+		.worth {
+			display: none;
+
+			&.no-afford {
+				color: @red;
+			}
+		}
+
+		&.no-compare .info {
+			display: none;
+		}
+	}
+
+	> .btn {
+		position: absolute;
+		background-color: @blueB;
+		color: @white;
+		padding: 10px;
+		text-align: center;
+	}
+}

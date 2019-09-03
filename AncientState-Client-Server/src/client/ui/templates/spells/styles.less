@@ -1,0 +1,98 @@
+@import "../../../css/colors.less";
+
+@pad: 8px;
+@btnSize: 64px;
+
+.uiSpells {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+
+	height: (@btnSize + (@pad * 2));
+	padding: @pad;
+	background-color: fade(#3a3b4a, 90%);
+
+	.spell {
+		width: @btnSize;
+		height: @btnSize;
+		float: left;
+		margin: 0px 8px;
+
+		cursor: pointer;
+		position: relative;
+
+		&:hover {
+			background-color: fade(@white, 10%);
+		}
+
+		&.active .hotkey {
+			color: @green;
+		}
+
+		.icon {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+		}
+
+		.cooldown {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 0px;
+			height: 100%;
+			background-color: fade(@red, 75%);
+		}
+
+		.hotkey {
+			position: absolute;
+			left: -2px;
+			bottom: -6px;
+			color: @white;
+			font-size: 18px;
+			z-index: 2;
+			text-shadow: 2px 2px 0 #2d2136,
+			   -2px -2px 0 #2d2136,  
+			    2px -2px 0 #2d2136,
+			   -2px  2px 0 #2d2136,
+			    2px  2px 0 #2d2136;
+
+			&.no-mana {
+				color: @red;
+			}
+		}
+	}
+}
+
+.mobile .uiSpells {
+	top: auto;
+	bottom: 10px;
+	padding: 0px;
+	height: auto;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column-reverse;
+
+
+	.spell {
+		position: relative;
+		margin: 8px 0px 0px 0px;
+		background-color: fade(#3a3b4a, 90%);
+
+		.hotkey {
+			display: none;
+		}
+
+		&.active:before {
+			content: '';
+		    width: 4px;
+		    height: 100%;
+		    left: -4px;
+		    top: 0%;
+		    background-color: @greenB;
+		    position: absolute;
+		}
+	}
+}
