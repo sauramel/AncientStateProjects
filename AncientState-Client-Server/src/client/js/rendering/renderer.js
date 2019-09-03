@@ -177,7 +177,7 @@ define([
 			for (let i = 0; i < w; i++) {
 				let ii = i / 10;
 				for (let j = 0; j < h; j++) {
-					let roll = Math.sin(((j * 0.2) % 5) + Math.cos(ii % 8));
+					let roll = Math.sin(((j * 0.2) % 5) + Math.cos(ii % 16));
 
 					let tile = 5;
 					if (roll < -0.2)
@@ -250,7 +250,7 @@ define([
 		},
 
 		getTexture: function (baseTex, cell, size) {
-			size = size || 8;
+			size = size || 16;
 			let textureName = baseTex + '_' + cell;
 
 			let textureCache = this.textureCache;
@@ -305,10 +305,6 @@ define([
 			tile.width = scale;
 			tile.height = scale;
 
-			if (canFlip && mRandom() < 0.5) {
-				tile.position.x += scale;
-				tile.scale.x = -scaleMult;
-			}
 
 			return tile;
 		},
